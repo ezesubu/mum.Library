@@ -52,6 +52,10 @@ public class DataAccessImpl implements  DataAccess {
 		checkoutRecordEntries.add(recordEntry1);
 		checkoutRecord1.setCheckoutRecordEntries(checkoutRecordEntries);
 		libraryMembers.get(0).setCheckOutRecord(checkoutRecord1);
+		
+		for (CheckoutRecordEntry checkoutRecordEntry : checkoutRecordEntries) {
+			System.out.println("");
+		}
 	}
 	
 	@Override
@@ -93,6 +97,10 @@ public class DataAccessImpl implements  DataAccess {
 		book1.setBookCopies(book1Copies);
 		
 		books.add(book1);
+		
+		for (BookCopy bookCopy : book1Copies) {
+			System.out.println("Bookcopy ID:"+bookCopy.getBookCopyNum());
+		}
 	}
 	@Override
 	public  void loadMembers() {
@@ -110,6 +118,10 @@ public class DataAccessImpl implements  DataAccess {
 		libraryMembers.add(member2);
 		libraryMembers.add(member3);
 		libraryMembers.add(member4);
+		
+		for (LibraryMember member : libraryMembers) {
+			System.out.println("ID: "+member.getId()+"Name:"+member.getFirstName()+ " "+ member.getLastName()+ "Member Number:"+member.getMemberNumber()+ "Address:"+ member.getAddress().getCity()+" "+ member.getAddress().getState());
+		}
 		//System.out.println("Loading Members Successfull...");
 	}
 
