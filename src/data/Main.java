@@ -13,9 +13,9 @@ public class Main {
 	public static void main(String[] args) {
 		generateData();
 		// TODO Auto-generated method stub
-		loginController.login();
-		memberController.addMember();
-		checkoutController.checkout();
+		//loginController.login();
+		//memberController.addMember();
+		//checkoutController.checkout();
 		bookController.addBookCopy();
 	}
 	private static void generateData() {
