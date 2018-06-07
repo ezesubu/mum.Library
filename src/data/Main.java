@@ -10,18 +10,16 @@ public class Main {
 	static CheckoutController checkoutController = new CheckoutController();
 	static BookController bookController = new BookController();
 	static MemberController memberController = new MemberController();
+	
+	static DataAccess dataAccess = new DataAccess();
 	public static void main(String[] args) {
-		generateData();
+		dataAccess.generateData();
 		// TODO Auto-generated method stub
-		//loginController.login();
-		//memberController.addMember();
-		//checkoutController.checkout();
+		loginController.login();
+		memberController.addMember();
+		checkoutController.checkout("", "");
+
 		bookController.addBookCopy();
-	}
-	private static void generateData() {
-		// TODO Auto-generated method stu0
-//		Bishwa
-		
 	}
 	
 
