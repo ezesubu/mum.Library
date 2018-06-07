@@ -15,10 +15,12 @@ import domain.LibraryMember;
 public class DataAccessImpl implements  DataAccess {
 	List<LibraryMember> libraryMembers;
 	List<Book> books;
+	List<CheckOutRecord> checkoutRecords;
 	
 	public DataAccessImpl() {
 		libraryMembers = new ArrayList<>();
 		books = new ArrayList<>();
+		checkoutRecords = new ArrayList<CheckOutRecord>();
 	}
 	
 	
@@ -52,9 +54,16 @@ public class DataAccessImpl implements  DataAccess {
 		checkoutRecordEntries.add(recordEntry1);
 		checkoutRecord1.setCheckoutRecordEntries(checkoutRecordEntries);
 		libraryMembers.get(0).setCheckOutRecord(checkoutRecord1);
+		checkoutRecord1.setMember(libraryMembers.get(0));
 		
-		for (CheckoutRecordEntry checkoutRecordEntry : checkoutRecordEntries) {
-			System.out.println("");
+	
+	System.out.println("*****");	
+		checkoutRecords.add(checkoutRecord1);
+		for (CheckOutRecord checkoutrecord : checkoutRecords) {
+			System.out.println("Checkout Record for"+ checkoutrecord.getMember().getFirstName());
+			for (CheckoutRecordEntry checkoutRecordEntry : checkoutRecordEntries) {
+				System.out.println("BookCopyNumber:"+ checkoutRecordEntry.getBookCopy().getBookCopyNum());
+			}
 		}
 	}
 	
@@ -62,6 +71,7 @@ public class DataAccessImpl implements  DataAccess {
 	public  void loadBooks() {
 		// TODO Auto-generated method stub
 		
+		System.out.println("*****");	
 		System.out.println("Loading books..");
 		Address addrs1 = new Address("1", "Street1", "Fairfield", "Iowa", "55411");
 		Author author1 = new Author("1", "AA1", "BB1", addrs1, "He is a experienced writer");
@@ -126,19 +136,6 @@ public class DataAccessImpl implements  DataAccess {
 	}
 
 
-
-
-
-	@Override
-	public BookCopy getBookCopyByNumber() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-
 	@Override
 	public Book getBookByISBN() {
 		// TODO Auto-generated method stub
@@ -163,5 +160,15 @@ public class DataAccessImpl implements  DataAccess {
 	public void saveCheckoutEntry(CheckoutEntry checkoutEntry) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+
+
+
+	@Override
+	public BookCopy getBookCopyByNumber(String copyNumber) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
