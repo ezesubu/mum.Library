@@ -6,7 +6,8 @@ package controller;
  */
 public class CheckoutController {
 
-	public void checkout() {
+	public void checkout(String ISBN, String memberID) {
+		
 		
 	}
 

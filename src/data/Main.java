@@ -17,7 +17,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		loginController.login();
 		memberController.addMember();
-		checkoutController.checkout();
+		checkoutController.checkout("", "");
 		bookController.addBookCopy();
 	}
 	
