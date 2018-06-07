@@ -8,23 +8,40 @@ import domain.Author;
 import domain.Book;
 import domain.BookCopy;
 import domain.CheckOutRecord;
+import domain.CheckoutEntry;
 import domain.CheckoutRecordEntry;
 import domain.LibraryMember;
 
-public class DataAccess {
+public class DataAccessImpl implements  DataAccess {
 	List<LibraryMember> libraryMembers;
 	List<Book> books;
 	
-	public DataAccess() {
+	public DataAccessImpl() {
 		libraryMembers = new ArrayList<>();
 		books = new ArrayList<>();
 	}
+	
+	
+	
+	
+	
+	@Override
+	public LibraryMember getMemberById(String memberId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	@Override
 	public void generateData() {
 		loadMembers();
 		loadBooks();
 		loadCheckOutRecords();
 	}
-	private void loadCheckOutRecords() {
+	
+	@Override
+	public void loadCheckOutRecords() {
 		// TODO Auto-generated method stub
 		System.out.println("Loading Checkout Records...");
 		CheckOutRecord checkoutRecord1 = new CheckOutRecord();
@@ -36,7 +53,9 @@ public class DataAccess {
 		checkoutRecord1.setCheckoutRecordEntries(checkoutRecordEntries);
 		libraryMembers.get(0).setCheckOutRecord(checkoutRecord1);
 	}
-	private void loadBooks() {
+	
+	@Override
+	public  void loadBooks() {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Loading books..");
@@ -75,7 +94,8 @@ public class DataAccess {
 		
 		books.add(book1);
 	}
-	private void loadMembers() {
+	@Override
+	public  void loadMembers() {
 		// TODO Auto-generated method stub
 		System.out.println("Loading Members...");
 		Address addrs1 = new Address("1", "Street1", "Fairfield", "Iowa", "55411");
@@ -92,5 +112,44 @@ public class DataAccess {
 		libraryMembers.add(member4);
 		//System.out.println("Loading Members Successfull...");
 	}
-	
+
+
+
+
+
+	@Override
+	public BookCopy getBookCopyByNumber() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+	@Override
+	public Book getBookByISBN() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+	@Override
+	public int getNumberOfAvailableCopies(String bookId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+
+	@Override
+	public void saveCheckoutEntry(CheckoutEntry checkoutEntry) {
+		// TODO Auto-generated method stub
+		
+	}
 }
