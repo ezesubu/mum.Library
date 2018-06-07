@@ -11,12 +11,15 @@ private CheckOutRecord checkOutRecord;
 public void setCheckOutRecord(CheckOutRecord checkOutRecord) {
 	this.checkOutRecord = checkOutRecord;
 }
-
+public LibraryMember() {
+	// TODO Auto-generated constructor stub
+}
 	public LibraryMember(String id, String firstName, String lastName, Address address, String memNumber) {
 		super(id, firstName, lastName, address);
 		this.memberNumber = memNumber;
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	public String getMemberNumber() {
 	return memberNumber;

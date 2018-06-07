@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheckOutRecord {
+	LibraryMember member;
 	private List<CheckoutRecordEntry> checkoutRecordEntries;
 
 	public List<CheckoutRecordEntry> getCheckoutRecordEntries() {
@@ -17,5 +18,14 @@ public class CheckOutRecord {
 	public CheckOutRecord() {
 		// TODO Auto-generated constructor stub
 		checkoutRecordEntries = new ArrayList<>();
+		member= new LibraryMember();
+	}
+
+	public LibraryMember getMember() {
+		return member;
+	}
+
+	public void setMember(LibraryMember member) {
+		this.member = member;
 	}
 }

@@ -6,6 +6,9 @@ public class Person {
 	private String lastName;
 	private Address address;
 	
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
 	public Person(String id, String firstName, String lastName, Address address) {
 		super();
 		this.id = id;

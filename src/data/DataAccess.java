@@ -11,7 +11,7 @@ public interface DataAccess {
 	void loadCheckOutRecords();
 	 void loadBooks();
 	 void loadMembers();
-	 BookCopy getBookCopyByNumber();
+	 BookCopy getBookCopyByNumber(String copyNumber);
 	 Book getBookByISBN();
 	 int getNumberOfAvailableCopies(String bookId);
 	 void saveCheckoutEntry(CheckoutEntry checkoutEntry);
