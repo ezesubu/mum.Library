@@ -7,6 +7,8 @@ import domain.Address;
 import domain.Author;
 import domain.Book;
 import domain.BookCopy;
+import domain.CheckOutRecord;
+import domain.CheckoutRecordEntry;
 import domain.LibraryMember;
 
 public class DataAccess {
@@ -20,11 +22,24 @@ public class DataAccess {
 	public void generateData() {
 		loadMembers();
 		loadBooks();
+		loadCheckOutRecords();
+	}
+	private void loadCheckOutRecords() {
+		// TODO Auto-generated method stub
+		System.out.println("Loading Checkout Records...");
+		CheckOutRecord checkoutRecord1 = new CheckOutRecord();
+		List<CheckoutRecordEntry> checkoutRecordEntries = new ArrayList<>();
+		
+		CheckoutRecordEntry recordEntry1 = new CheckoutRecordEntry();
+		recordEntry1.setBookCopy(books.get(0).getBookCopies().get(0));
+		checkoutRecordEntries.add(recordEntry1);
+		checkoutRecord1.setCheckoutRecordEntries(checkoutRecordEntries);
+		libraryMembers.get(0).setCheckOutRecord(checkoutRecord1);
 	}
 	private void loadBooks() {
 		// TODO Auto-generated method stub
-		Book book1 = new Book();
 		
+		System.out.println("Loading books..");
 		Address addrs1 = new Address("1", "Street1", "Fairfield", "Iowa", "55411");
 		Author author1 = new Author("1", "AA1", "BB1", addrs1, "He is a experienced writer");
 		Author author2 = new Author("2", "AA2", "BB2", addrs1, "He is experienced java developer");
@@ -32,16 +47,33 @@ public class DataAccess {
 		authors.add(author1);
 		authors.add(author2);
 		
-		
+		//book1
+		Book book1 = new Book();
 		book1.setISBN("123");
 		book1.setMaxCheckoutDays(21);
 		book1.setTitle("Beginners Java");
 		book1.setAuthors(authors);
 		
-		BookCopy bookCopy1 = new BookCopy();
-		bookCopy1.setBookCopyNum("1");
+		BookCopy book1Copy1 = new BookCopy();
+		book1Copy1.setBookCopyNum("1");
+		book1Copy1.setBook(book1);
 		
-		//book1.setBookCopies(bookCopies);
+		BookCopy book1Copy2 = new BookCopy();
+		book1Copy2.setBookCopyNum("2");
+		book1Copy2.setBook(book1);
+		
+		BookCopy book1Copy3 = new BookCopy();
+		book1Copy3.setBookCopyNum("3");
+		book1Copy2.setBook(book1);
+		
+		List<BookCopy> book1Copies = new ArrayList<>();
+		book1Copies.add(book1Copy1);
+		book1Copies.add(book1Copy2);
+		book1Copies.add(book1Copy3);
+		
+		book1.setBookCopies(book1Copies);
+		
+		books.add(book1);
 	}
 	private void loadMembers() {
 		// TODO Auto-generated method stub
@@ -60,4 +92,5 @@ public class DataAccess {
 		libraryMembers.add(member4);
 		//System.out.println("Loading Members Successfull...");
 	}
+	
 }

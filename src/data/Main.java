@@ -12,6 +12,7 @@ public class Main {
 	static MemberController memberController = new MemberController();
 	
 	static DataAccess dataAccess = new DataAccess();
+
 	public static void main(String[] args) {
 		DataAccess data = new DataAccess();
 		// TODO Auto-generated method stub
