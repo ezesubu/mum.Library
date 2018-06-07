@@ -1,4 +1,4 @@
-package Library;
+package domain;
 
 public class Role {
 
