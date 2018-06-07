@@ -38,8 +38,9 @@ public class BookController {
 	
 	
 	private void createBookCopy(Book book) {
-		BookCopy bookCopy = new BookCopy(book, "1");
-		
+		Integer numCopies = book.getNumCopies();
+		BookCopy bookCopy = new BookCopy(book, numCopies++);
+		book.addBookCopy(bookCopy);
 	}
 
 

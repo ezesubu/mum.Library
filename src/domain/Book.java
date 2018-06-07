@@ -21,6 +21,10 @@ public class Book {
 	public void addBookCopy(BookCopy bookCopy) {
 		bookCopies.add(bookCopy);
 	}
+	
+	public Integer getNumCopies() {
+		return bookCopies.size();
+	}
 
 	public String getISBN() {
 		// TODO Auto-generated method stub

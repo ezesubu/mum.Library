@@ -2,9 +2,9 @@ package domain;
 
 public class BookCopy {
 	private Book book;
-	private String bookCopyNum;
+	private Integer bookCopyNum;
 	
-	public BookCopy(Book book, String bookCopyNum) {
+	public BookCopy(Book book, Integer bookCopyNum) {
 		this.book = book;
 		this.bookCopyNum = bookCopyNum;
 	}
