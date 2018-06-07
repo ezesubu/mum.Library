@@ -13,12 +13,13 @@ public class Main {
 	
 	static DataAccess dataAccess = new DataAccess();
 	public static void main(String[] args) {
-		dataAccess.generateData();
+		DataAccess data = new DataAccess();
 		// TODO Auto-generated method stub
 		loginController.login();
 		memberController.addMember();
-		checkoutController.checkout();
-		bookController.addBookCopy();
+		checkoutController.checkout("", "");
+
+		bookController.addBookCopy(data.getBooks());
 	}
 	
 

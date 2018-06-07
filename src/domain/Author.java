@@ -21,6 +21,11 @@ public class Author extends Person{
 		books.add(book);
 	}
 
+	@Override
+	public String toString() {
+		return "Author [Name " +super.getFirstName() +" " +super.getLastName()+" biography=" + biography + ", books=" + books + "]";
+	}
+
 
 	
 	

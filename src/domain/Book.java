@@ -4,11 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
+
+
 	private String ISBN;
 	private String title;
 	private Integer maxCheckoutDays;
 	private List<Author> authors;
 	private List<BookCopy> bookCopies;
+		
+	public Book(String iSBN, String title, Integer maxCheckoutDays, List<Author> authors) {
+		this.ISBN = iSBN;
+		this.title = title;
+		this.maxCheckoutDays = maxCheckoutDays;
+		this.authors = authors;
+	}
 	
 	public Book() {
 		authors = new ArrayList<>();
@@ -45,6 +54,11 @@ public class Book {
 		this.bookCopies = bookCopies;
 	}
 
- 	
+
+	@Override
+	public String toString() {
+		return "Book [ISBN=" + ISBN + ", title=" + title + ", maxCheckoutDays=" + maxCheckoutDays + ", authors="
+				+ authors + "]";
+	}
 	
 }
