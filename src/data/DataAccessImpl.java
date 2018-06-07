@@ -89,14 +89,17 @@ public class DataAccessImpl implements  DataAccess {
 		
 		BookCopy book1Copy1 = new BookCopy();
 		book1Copy1.setBookCopyNum("1");
+		book1Copy1.setAvailable(true);
 		book1Copy1.setBook(book1);
 		
 		BookCopy book1Copy2 = new BookCopy();
 		book1Copy2.setBookCopyNum("2");
+		book1Copy2.setAvailable(true);
 		book1Copy2.setBook(book1);
 		
 		BookCopy book1Copy3 = new BookCopy();
 		book1Copy3.setBookCopyNum("3");
+		book1Copy3.setAvailable(true);
 		book1Copy2.setBook(book1);
 		
 		List<BookCopy> book1Copies = new ArrayList<>();
@@ -149,6 +152,11 @@ public class DataAccessImpl implements  DataAccess {
 	@Override
 	public int getNumberOfAvailableCopies(String bookId) {
 		// TODO Auto-generated method stub
+		
+		for (Book book : books) {
+			if(book.getISBN().equals(bookId))
+				return book.getBookCopies().size();
+		}
 		return 0;
 	}
 
