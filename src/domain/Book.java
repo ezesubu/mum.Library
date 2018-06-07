@@ -19,6 +19,11 @@ public class Book {
 	public void addBookCopy(BookCopy bookCopy) {
 		bookCopies.add(bookCopy);
 	}
+
+	public String getISBN() {
+		// TODO Auto-generated method stub
+		return this.ISBN;
+	}
  	
 	
 }

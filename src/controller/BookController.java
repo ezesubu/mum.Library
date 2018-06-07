@@ -19,11 +19,18 @@ public class BookController {
 		String ch = sc.next();
 		System.out.println();
 		System.out.println("you chose" + ch);
+		Book book = searchBookByISBN(ch, list);
 	}
 	
 	
-//	public Book searchBookByISBN(String ISBN, List<Book> books) {
-//		
-//	}
+	public Book searchBookByISBN(String ISBN, List<Book> books) {
+		for(Book book: books) {
+			if(ISBN == book.getISBN()) {
+				return book;
+			}else {
+				return null;
+			}
+		}
+	}
 
 }
