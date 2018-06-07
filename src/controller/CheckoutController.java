@@ -14,8 +14,21 @@ import domain.LibraryMember;
  */
 public class CheckoutController {
 	DataAccess dataAccess = DataAccessFactory.getDataAccess();
-	public void checkout(String bookCopyNumber, String memberId) {
-		System.out.println("Checkout bookNumber= " + bookCopyNumber + ", memberID = " + memberId);
+	/**
+	 * 
+	 * There are two approaches on the book checkout
+	 * 1. checkout by ISBN: ISBN -> book. A book has one or more book copies.
+	 * All book copies of a book have the same ISBN, so we don't know which 
+	 * physical copies are actually checkout.
+	 *   
+	 * 2. checkout by physical book ID: we can know exactly which book copy is checked out.
+	 * Here I choose the second approach.
+	 * 
+	 * @param bookCopyId
+	 * @param memberId
+	 */
+	public void checkoutByBookCopyNumber(String bookCopyId, String memberId) {
+		System.out.println("Checkout bookCopyId= " + bookCopyId + ", memberID = " + memberId);
 //		validate member ID
 		LibraryMember libraryMember = dataAccess.getMemberById(memberId) ;   
 		
@@ -24,13 +37,20 @@ public class CheckoutController {
 			return;
 		}
 		
-		BookCopy bookCopy = dataAccess.getBookCopyByNumber(bookCopyNumber);
+		BookCopy bookCopy = dataAccess.getBookCopyByNumber(bookCopyId);
 		Book book = bookCopy.getBook();
 		System.out.println("\tCheckingout book: " + book);
+		
+		int availableCopies = dataAccess.getNumberOfAvailableCopies(book.getISBN());
+		System.out.println("\tAvailable copies: " + availableCopies);
 		
 		CheckoutRecordEntry checkoutEntry = new CheckoutRecordEntry();
 		checkoutEntry.setBookCopy(bookCopy);
 		dataAccess.saveCheckoutEntry(checkoutEntry);
+		bookCopy.setAvailable(false);
+		dataAccess.saveBookCopy(bookCopy);
+		System.out.println("Done checkout.");
+		System.out.println("\tAvailable copies: " + dataAccess.getNumberOfAvailableCopies(book.getISBN()));
 		
 		
 	}

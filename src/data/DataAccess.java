@@ -15,5 +15,5 @@ public interface DataAccess {
 	 Book getBookByISBN();
 	 int getNumberOfAvailableCopies(String bookId);
 	 void saveCheckoutEntry(CheckoutRecordEntry checkoutEntry);
-	 
+	 void saveBookCopy(BookCopy bookCopy);
 }
