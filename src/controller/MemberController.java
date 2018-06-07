@@ -1,9 +1,16 @@
 package controller;
 
-public class MemberController {
+import data.DataAccess;
+import data.DataAccessFactory;
 
+public class MemberController {
+	private DataAccess dataAccess = DataAccessFactory.getDataAccess();
 	public void addMember() {
 //		Ezequel
 	}
 
+	
+	public LibraryMember getMemberById(String memberId) {
+		return dataAccess.getMemberById(memberId);
+	}
 }
