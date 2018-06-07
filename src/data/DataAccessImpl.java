@@ -8,7 +8,6 @@ import domain.Author;
 import domain.Book;
 import domain.BookCopy;
 import domain.CheckOutRecord;
-import domain.CheckoutEntry;
 import domain.CheckoutRecordEntry;
 import domain.LibraryMember;
 
@@ -157,7 +156,7 @@ public class DataAccessImpl implements  DataAccess {
 
 
 	@Override
-	public void saveCheckoutEntry(CheckoutEntry checkoutEntry) {
+	public void saveCheckoutEntry(CheckoutRecordEntry checkoutEntry) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -171,4 +170,6 @@ public class DataAccessImpl implements  DataAccess {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 }

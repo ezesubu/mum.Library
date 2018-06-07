@@ -15,7 +15,7 @@ import domain.LibraryMember;
 public class CheckoutController {
 	DataAccess dataAccess = DataAccessFactory.getDataAccess();
 	public void checkout(String bookCopyNumber, String memberId) {
-		System.out.println("Checkout bookNumber= " + bookNumber + ", memberID = " + memberId);
+		System.out.println("Checkout bookNumber= " + bookCopyNumber + ", memberID = " + memberId);
 //		validate member ID
 		LibraryMember libraryMember = dataAccess.getMemberById(memberId) ;   
 		
