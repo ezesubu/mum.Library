@@ -2,6 +2,7 @@ package controller;
 
 import data.DataAccess;
 import data.DataAccessFactory;
+import domain.LibraryMember;
 
 public class MemberController {
 	private DataAccess dataAccess = DataAccessFactory.getDataAccess();

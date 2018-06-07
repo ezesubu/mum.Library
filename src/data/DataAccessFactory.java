@@ -1,7 +1,7 @@
 package data;
 
 public final class DataAccessFactory {
-	private static DataAccess dataAccess = new DataAccess();
+	private static DataAccess dataAccess = new DataAccessImpl();
 
 	private DataAccessFactory() {
 	}

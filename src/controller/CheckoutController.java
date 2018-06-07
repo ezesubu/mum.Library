@@ -5,9 +5,10 @@ package controller;
  * Checkout controller
  */
 public class CheckoutController {
+	
 	public void checkout(String memberID, String ISBN) {
 //		validate member ID
-//		LibraryMember libraryMember =  
+//		LibraryMember libraryMember =   
 		
 	}
 
