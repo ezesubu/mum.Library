@@ -151,12 +151,19 @@ public class DataAccessImpl implements  DataAccess {
 	@Override
 	public int getNumberOfAvailableCopies(String bookId) {
 		// TODO Auto-generated method stub
-		
+		int count = 0;
 		for (Book book : books) {
 			if(book.getISBN().equals(bookId))
-				return book.getBookCopies().size();
+			{
+				for (BookCopy copy : book.getBookCopies()) {
+					if(copy.isAvailable())
+						count++;
+						
+				}
+				return count;
+			}
 		}
-		return 0;
+		return count;
 	}
 
 

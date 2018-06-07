@@ -3,7 +3,7 @@ package domain;
 public class BookCopy {
 	private Book book;
 	private String bookCopyNum;
-	boolean isAvailable;
+	private boolean isAvailable;
 	
 	public boolean isAvailable() {
 		return isAvailable;
