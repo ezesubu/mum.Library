@@ -1,5 +1,7 @@
 package data;
 
 public class DataAccess {
-	public void generateData();
+	public void generateData() {
+		
+	}
 }
