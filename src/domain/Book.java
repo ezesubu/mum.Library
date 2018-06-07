@@ -1,8 +1,11 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
+
+
 	private String ISBN;
 	private String title;
 	private Integer maxCheckoutDays;
@@ -16,14 +19,57 @@ public class Book {
 		this.authors = authors;
 	}
 	
-	public void addBookCopy(BookCopy bookCopy) {
-		bookCopies.add(bookCopy);
+	public Book() {
+		authors = new ArrayList<>();
+		bookCopies = new ArrayList<>();
 	}
 
 	public String getISBN() {
-		// TODO Auto-generated method stub
-		return this.ISBN;
+		return ISBN;
 	}
- 	
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public Integer getMaxCheckoutDays() {
+		return maxCheckoutDays;
+	}
+	public void setMaxCheckoutDays(Integer maxCheckoutDays) {
+		this.maxCheckoutDays = maxCheckoutDays;
+	}
+	public List<Author> getAuthors() {
+		return authors;
+	}
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
+	public List<BookCopy> getBookCopies() {
+		return bookCopies;
+	}
+	public void setBookCopies(List<BookCopy> bookCopies) {
+		this.bookCopies = bookCopies;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Book [ISBN=" + ISBN + ", title=" + title + ", maxCheckoutDays=" + maxCheckoutDays + ", authors="
+				+ authors + "]";
+	}
+
+	public Integer getNumCopies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void addBookCopy(BookCopy bookCopy) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

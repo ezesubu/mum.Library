@@ -14,7 +14,7 @@ public class Main {
 		memberController.addMember();
 		checkoutController.checkout("", "");
 
-		bookController.addBookCopy(data.getBooks());
+//		bookController.addBookCopy(data.getBooks());
 	}
 	
 
