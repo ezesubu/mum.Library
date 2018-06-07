@@ -8,7 +8,17 @@ public class Book {
 	private Integer maxCheckoutDays;
 	private List<Author> authors;
 	private List<BookCopy> bookCopies;
+		
+	public Book(String iSBN, String title, Integer maxCheckoutDays, List<Author> authors) {
+		this.ISBN = iSBN;
+		this.title = title;
+		this.maxCheckoutDays = maxCheckoutDays;
+		this.authors = authors;
+	}
 	
+	public void addBookCopy(BookCopy bookCopy) {
+		bookCopies.add(bookCopy);
+	}
  	
 	
 }
