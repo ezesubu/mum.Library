@@ -3,6 +3,8 @@ package domain;
 import java.util.List;
 
 public class Book {
+
+
 	private String ISBN;
 	private String title;
 	private Integer maxCheckoutDays;
@@ -25,5 +27,10 @@ public class Book {
 		return this.ISBN;
 	}
  	
+	@Override
+	public String toString() {
+		return "Book [ISBN=" + ISBN + ", title=" + title + ", maxCheckoutDays=" + maxCheckoutDays + ", authors="
+				+ authors + "]";
+	}
 	
 }

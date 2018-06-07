@@ -22,7 +22,7 @@ public class DataAccess {
 		
 		books.add(new Book("001", "2001: A Space Odyssey", 5, authors));
 		books.add(new Book("002", "3001: The Final Odyssey", 4, authors));
-		books.add(new Book("002", "3001: The Final Odyssey", 4, authors));
+		books.add(new Book("003", "3001: The Final Odyssey", 4, authors));
 	}
 	
 	public List<Book> getBooks(){

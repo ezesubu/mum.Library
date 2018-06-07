@@ -14,23 +14,26 @@ public class BookController {
 		
 		//String n = System.getProperty("line.separator");
 		String choices = "Enter ISBN number:";
+		//001
 		Scanner sc = new Scanner(System.in);
 		System.out.print(choices);
 		String ch = sc.next();
 		System.out.println();
-		System.out.println("you chose" + ch);
 		Book book = searchBookByISBN(ch, list);
+		if(book != null) {
+			System.out.println(book);
+		}else {
+			System.out.println("The book dont exits");
+		}
 	}
 	
 	
 	public Book searchBookByISBN(String ISBN, List<Book> books) {
-		for(Book book: books) {
-			if(ISBN == book.getISBN()) {
+		for(Book book: books) {			
+			if(ISBN.equals(book.getISBN())) 
 				return book;
-			}else {
-				return null;
-			}
 		}
+		return null;
 	}
 
 }
