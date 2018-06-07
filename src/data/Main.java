@@ -20,7 +20,6 @@ public class Main {
 		checkoutController.checkout();
 		bookController.addBookCopy();
 	}
-	}
 	
 
 }
