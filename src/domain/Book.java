@@ -23,6 +23,7 @@ public class Book {
 		authors = new ArrayList<>();
 		bookCopies = new ArrayList<>();
 	}
+
 	public String getISBN() {
 		return ISBN;
 	}
@@ -59,6 +60,16 @@ public class Book {
 	public String toString() {
 		return "Book [ISBN=" + ISBN + ", title=" + title + ", maxCheckoutDays=" + maxCheckoutDays + ", authors="
 				+ authors + "]";
+	}
+
+	public Integer getNumCopies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void addBookCopy(BookCopy bookCopy) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

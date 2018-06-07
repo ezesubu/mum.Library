@@ -8,6 +8,10 @@ public class BookCopy {
 		book = new Book();
 	}
 
+	public BookCopy(Book book2, Integer integer) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Book getBook() {
 		return book;
 	}
