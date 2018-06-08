@@ -1,7 +1,9 @@
 package data;
 
+import java.time.chrono.IsoChronology;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import domain.Address;
 import domain.Author;
@@ -171,9 +173,37 @@ public class DataAccessImpl implements  DataAccess {
 
 
 	@Override
-	public void saveCheckoutEntry(CheckoutRecordEntry checkoutEntry) {
+	public void saveCheckoutEntry(String memberId, CheckoutRecordEntry checkoutEntry) {
+		CheckOutRecord r;
+		
+		//find record by member id
+		boolean isRecordExist = false;
+		for (CheckOutRecord checkOutRecord : checkoutRecords) {
+			if(checkOutRecord.getMember().getId().equals(memberId))
+			{
+				isRecordExist = true;
+				checkOutRecord.addCheckoutEntry(checkoutEntry);
+				break;
+			}
+			
+		}
+		if(!isRecordExist) {
+			CheckOutRecord ck = new CheckOutRecord();
+			LibraryMember m;
+			for (LibraryMember member : libraryMembers) {
+				if(member.getId().equals(memberId)) {
+					m = member;
+					ck.addCheckoutEntry(checkoutEntry);
+					ck.setMember(m);
+					checkoutRecords.add(ck);
+					break;
+				}
+			}
+		
+		}
 		// TODO Auto-generated method stub
 		
+
 	}
 
 
@@ -184,6 +214,16 @@ public class DataAccessImpl implements  DataAccess {
 	public BookCopy getBookCopyByNumber(String copyNumber) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+
+
+
+	@Override
+	public void saveBookCopy(BookCopy bookCopy) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
