@@ -4,23 +4,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import data.DataAccess;
+import data.DataAccessFactory;
 import domain.Address;
 import domain.Author;
 import domain.Book;
 import domain.BookCopy;
 
 public class BookController {
-
-	public void addBookCopy(List<Book> list) {
-		
-				
-		//001
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter ISBN number: ");
-		String ch = sc.next();
-		System.out.println();
-		System.out.println("Searching book.....");
-		Book book = searchBookByISBN(ch, list);
+	DataAccess dataAccess = DataAccessFactory.getDataAccess();
+	public void addBookCopy(String ISBN) {
+		Book book = dataAccess.getBookByISBN(ISBN);
 		if(book != null) {
 			System.out.println(book);
 			Scanner sc1 = new Scanner(System.in);
@@ -37,10 +31,10 @@ public class BookController {
 	}
 	
 	
-	private void createBookCopy(Book book) {
-		Integer numCopies = book.getNumCopies();
-		BookCopy bookCopy = new BookCopy(book,numCopies++);
-		book.addBookCopy(bookCopy);
+	private BookCopy createBookCopy(Book book) {
+		BookCopy bookCopy = new BookCopy();
+		bookCopy.setBookCopyNum(System.currentTimeMillis() + "");
+		return bookCopy;
 	}
 
 
