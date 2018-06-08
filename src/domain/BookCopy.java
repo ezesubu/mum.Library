@@ -36,4 +36,10 @@ public class BookCopy {
 	public void setBookCopyNum(String bookCopyNum) {
 		this.bookCopyNum = bookCopyNum;
 	}
+
+	@Override
+	public String toString() {
+		return "BookCopy [bookCopyNum=" + bookCopyNum + ", isAvailable=" + isAvailable +  "]";
+	}
+	
 }

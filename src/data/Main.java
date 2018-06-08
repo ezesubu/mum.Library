@@ -13,20 +13,26 @@ public class Main {
 	static CheckoutController checkoutController = ControllerFactory.getCheckoutController();
 	static BookController bookController = ControllerFactory.getBookController();
 	public static void main(String[] args) {
+		System.out.println("LOADING SAMPLE DATA...");
 		dataAccess.generateData();
-		
+		System.out.println("START DOING BUSINESS...");
 //		login
-		loginController.login();
+		System.out.println("1. LIBRARY STAFF LOGIN");
+		loginController.login("bishwa123", "123");
 		
 //		add library member
+		System.out.println("2. ADD LIBRARY MEMBER");
 		memberController.addMember();
 		
 //		checkout a book
-		checkoutController.checkoutByBookCopyNumber("", "");
+		System.out.println("3. LIBRARY STAFF CHECKOUT A BOOK TO LIBRARY MEMBER");
+		checkoutController.checkoutByBookCopyNumber("BC_1", "M_1");
 		
 //		add new book copy
+		System.out.println("4. LIBRARY STAFF(ADMINISTRATOR) ADD NEW BOOK COPY TO AN EXISTING BOOK");
+		bookController.addBookCopy("ISBN_634545");
 		
-		bookController.addBookCopy("");
+		System.out.println("DONE");
 	}
 
 }

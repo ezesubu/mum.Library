@@ -1,5 +1,7 @@
 package data;
 
+import java.util.List;
+
 import domain.Book;
 import domain.BookCopy;
 import domain.CheckoutRecordEntry;
@@ -23,8 +25,6 @@ public interface DataAccess {
 
 	int getNumberOfAvailableCopies(String bookId);
 
-	void saveCheckoutEntry(CheckoutRecordEntry checkoutEntry);
-
 	void saveBookCopy(BookCopy bookCopy);
 
 	// for Login
@@ -33,8 +33,9 @@ public interface DataAccess {
 	// add new member
 	void saveLibraryMember(LibraryMember libraryMember);
 
-	void saveBookCopy(String ISBN, BookCopy bookCopy);
-
 	void saveCheckoutEntry(String memberId, CheckoutRecordEntry checkoutEntry);
+
+	List<LibraryMember> getAllLibraryMembers();
+
 
 }

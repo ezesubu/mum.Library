@@ -28,31 +28,29 @@ public class CheckoutController {
 	 * @param memberId
 	 */
 	public void checkoutByBookCopyNumber(String bookCopyId, String memberId) {
-		System.out.println("Checkout bookCopyId= " + bookCopyId + ", memberID = " + memberId);
+		System.out.println("\tCheckout bookCopyId=" + bookCopyId + ", memberID = " + memberId);
 //		validate member ID
 		LibraryMember libraryMember = dataAccess.getMemberById(memberId) ;   
 		
 		if (libraryMember == null) {
-			System.out.println("\tMember not found. Exit");
+			System.out.println("\t\tMember not found. Exit");
 			return;
 		}
 		
 		BookCopy bookCopy = dataAccess.getBookCopyByNumber(bookCopyId);
 		Book book = bookCopy.getBook();
-		System.out.println("\tCheckingout book: " + book);
+		System.out.println("\t\tCheckingout book: " + book);
 		
 		int availableCopies = dataAccess.getNumberOfAvailableCopies(book.getISBN());
-		System.out.println("\tAvailable copies: " + availableCopies);
+		System.out.println("\t\tAvailable copies: " + availableCopies);
 		
 		CheckoutRecordEntry checkoutEntry = new CheckoutRecordEntry();
 		checkoutEntry.setBookCopy(bookCopy);		
 		dataAccess.saveCheckoutEntry(memberId, checkoutEntry);
 		bookCopy.setAvailable(false);
 		dataAccess.saveBookCopy(bookCopy);
-		System.out.println("Done checkout.");
-		System.out.println("\tAvailable copies: " + dataAccess.getNumberOfAvailableCopies(book.getISBN()));
-		
-		
+		System.out.println("\t\tDone checkout.");
+		System.out.println("\t\tAvailable copies: " + dataAccess.getNumberOfAvailableCopies(book.getISBN()));
 	}
 
 }
