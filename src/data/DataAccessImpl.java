@@ -6,13 +6,16 @@ import java.util.List;
 import java.util.Optional;
 
 import domain.Address;
+import domain.Administrator;
 import domain.Author;
 import domain.Book;
 import domain.BookCopy;
 import domain.CheckOutRecord;
 import domain.CheckoutRecordEntry;
+import domain.Librarian;
 import domain.LibraryMember;
 import domain.LibraryStaff;
+import domain.Role;
 
 public class DataAccessImpl implements  DataAccess {
 	List<LibraryMember> libraryMembers;
@@ -24,6 +27,8 @@ public class DataAccessImpl implements  DataAccess {
 		libraryMembers = new ArrayList<>();
 		books = new ArrayList<>();
 		checkoutRecords = new ArrayList<CheckOutRecord>();
+		staffs = new ArrayList<LibraryStaff>();
+		
 	}
 	
 	
@@ -40,11 +45,30 @@ public class DataAccessImpl implements  DataAccess {
 	
 	@Override
 	public void generateData() {
+		loadStaffs();
 		loadMembers();
 		loadBooks();
 		loadCheckOutRecords();
 	}
 	
+	private void loadStaffs() {
+		// TODO Auto-generated method stub
+		System.out.println("Loading Staff");
+		Address addrs2 = new Address("2", "Street2", "Fairfield", "Iowa", "55411");
+		LibraryStaff staff = new LibraryStaff("15", "qwan", "asd", addrs2, "bishwa123", "123", "basd@gmail.com");
+		Role role1 = new Librarian();
+		Role role2 = new Administrator();
+		List<Role> roles = new ArrayList<Role>();
+		roles.add(role1);
+		roles.add(role2);
+		staff.setRoles(roles);
+		
+	}
+
+
+
+
+
 	@Override
 	public void loadCheckOutRecords() {
 		// TODO Auto-generated method stub
@@ -256,6 +280,10 @@ public class DataAccessImpl implements  DataAccess {
 	@Override
 	public LibraryStaff getUser(String username, String password) {
 		// TODO Auto-generated method stub
+		for (LibraryStaff st : staffs) {
+			if(st.getUserName().equals(username) && st.getPassword().equals(password))
+				return st;
+		}
 		return null;
 	}
 

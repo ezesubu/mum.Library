@@ -1,9 +1,26 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryStaff extends Person{
 	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	private String userName;
 	private String password;
 	private String email;
@@ -23,6 +40,7 @@ public class LibraryStaff extends Person{
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
+		roles = new ArrayList<Role>();
 	}
 	
 	public String getPassword() {
