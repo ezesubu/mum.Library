@@ -61,15 +61,4 @@ public class Book {
 		return "Book [ISBN=" + ISBN + ", title=" + title + ", maxCheckoutDays=" + maxCheckoutDays + ", authors="
 				+ authors + "]";
 	}
-
-	public Integer getNumCopies() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void addBookCopy(BookCopy bookCopy) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
