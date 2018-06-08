@@ -19,7 +19,7 @@ public interface DataAccess {
 
 	BookCopy getBookCopyByNumber(String copyNumber);
 
-	Book getBookByISBN();
+	Book getBookByISBN(String ISBN);
 
 	int getNumberOfAvailableCopies(String bookId);
 
