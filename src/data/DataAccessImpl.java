@@ -214,6 +214,12 @@ public class DataAccessImpl implements  DataAccess {
 	@Override
 	public BookCopy getBookCopyByNumber(String copyNumber) {
 		// TODO Auto-generated method stub
+		for (Book book : books) {
+			for (BookCopy copy : book.getBookCopies()) {
+				if(copy.getBookCopyNum().equals(copyNumber))
+					return copy;
+			}
+		}
 		return null;
 	}
 
