@@ -230,7 +230,12 @@ public class DataAccessImpl implements  DataAccess {
 	@Override
 	public void saveBookCopy(BookCopy bookCopy) {
 		// TODO Auto-generated method stub
+		Book book = bookCopy.getBook();
 		
+		for (Book bk : books) {
+			if(bk.getISBN().equals(book.getISBN()))
+				bk.addBookCopy(bookCopy);
+		}
 	}
 
 
