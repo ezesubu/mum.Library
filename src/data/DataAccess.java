@@ -4,6 +4,7 @@ import domain.Book;
 import domain.BookCopy;
 import domain.CheckoutRecordEntry;
 import domain.LibraryMember;
+import domain.LibraryStaff;
 
 public interface DataAccess {
 	LibraryMember getMemberById(String memberId);
@@ -16,4 +17,12 @@ public interface DataAccess {
 	 int getNumberOfAvailableCopies(String bookId);
 	 void saveCheckoutEntry(CheckoutRecordEntry checkoutEntry);
 	 void saveBookCopy(BookCopy bookCopy);
+	 
+//	 for Login
+	 LibraryStaff getUser(String username, String password);
+	 
+	 //add new member
+	 void saveLibraryMember(LibraryMember libraryMember);
+	 void saveBookCopy(String ISBN, BookCopy bookCopy);
+	 
 }
