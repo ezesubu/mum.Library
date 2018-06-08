@@ -298,6 +298,7 @@ public class DataAccessImpl implements  DataAccess {
 	@Override
 	public void saveLibraryMember(LibraryMember libraryMember) {
 		// TODO Auto-generated method stub
+		libraryMembers.add(libraryMember);
 		
 	}
 
