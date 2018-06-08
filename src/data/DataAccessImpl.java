@@ -18,6 +18,7 @@ public class DataAccessImpl implements  DataAccess {
 	List<LibraryMember> libraryMembers;
 	List<Book> books;
 	List<CheckOutRecord> checkoutRecords;
+	List<LibraryStaff> staffs;
 	
 	public DataAccessImpl() {
 		libraryMembers = new ArrayList<>();

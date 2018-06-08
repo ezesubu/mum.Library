@@ -69,7 +69,7 @@ public class Book {
 
 	public void addBookCopy(BookCopy bookCopy) {
 		// TODO Auto-generated method stub
-		
+		this.bookCopies.add(bookCopy);
 	}
 	
 }
