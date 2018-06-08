@@ -12,6 +12,7 @@ import domain.BookCopy;
 import domain.CheckOutRecord;
 import domain.CheckoutRecordEntry;
 import domain.LibraryMember;
+import domain.LibraryStaff;
 
 public class DataAccessImpl implements  DataAccess {
 	List<LibraryMember> libraryMembers;
@@ -222,6 +223,46 @@ public class DataAccessImpl implements  DataAccess {
 
 	@Override
 	public void saveBookCopy(BookCopy bookCopy) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+	@Override
+	public void saveCheckoutEntry(CheckoutRecordEntry checkoutEntry) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+	@Override
+	public LibraryStaff getUser(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+	@Override
+	public void saveLibraryMember(LibraryMember libraryMember) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+	@Override
+	public void saveBookCopy(String ISBN, BookCopy bookCopy) {
 		// TODO Auto-generated method stub
 		
 	}
