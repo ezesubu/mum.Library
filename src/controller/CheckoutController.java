@@ -45,8 +45,8 @@ public class CheckoutController {
 		System.out.println("\tAvailable copies: " + availableCopies);
 		
 		CheckoutRecordEntry checkoutEntry = new CheckoutRecordEntry();
-		checkoutEntry.setBookCopy(bookCopy);
-		dataAccess.saveCheckoutEntry(checkoutEntry);
+		checkoutEntry.setBookCopy(bookCopy);		
+		dataAccess.saveCheckoutEntry(memberId, checkoutEntry);
 		bookCopy.setAvailable(false);
 		dataAccess.saveBookCopy(bookCopy);
 		System.out.println("Done checkout.");
