@@ -167,8 +167,12 @@ public class DataAccessImpl implements  DataAccess {
 
 
 	@Override
-	public Book getBookByISBN() {
+	public Book getBookByISBN(String ISBN) {
 		// TODO Auto-generated method stub
+		for (Book book : books) {
+			if(book.getISBN().equals(ISBN))
+				return book;
+		}
 		return null;
 	}
 
