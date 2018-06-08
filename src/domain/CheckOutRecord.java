@@ -28,4 +28,8 @@ public class CheckOutRecord {
 	public void setMember(LibraryMember member) {
 		this.member = member;
 	}
+	
+	public void addCheckoutEntry(CheckoutRecordEntry e) {
+		this.checkoutRecordEntries.add(e);
+	}
 }
